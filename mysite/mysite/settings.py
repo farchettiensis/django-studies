@@ -98,9 +98,33 @@ DATABASES = {
         },
     },
 }
-
 """
 
+"""
+MySQL 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "USER": "root",
+        "NAME": "mysql",
+        "PASSWORD": "davidceo",
+        "HOST": "150.230.76.15",
+        "PORT": "3306",
+        "OPTIONS": {
+            "read_default_file": "path/to/my.cnf",
+            "init_command": "SET default_storage_engine=INNODB",
+        },
+    }
+}
+"""
+# my.cnf
+"""
+[client]
+database = NAME
+user = USER
+password = PASSWORD
+default-character-set = utf8
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
