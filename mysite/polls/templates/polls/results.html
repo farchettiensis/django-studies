@@ -2,7 +2,9 @@
 
 <ul>
 {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li> 
+    <!-- The | is used to apply filters, which are functions that modify the value of a variable.
+    Pluralize returns an 's' if the value is greater than one. -->
 {% endfor %}
 </ul>
 
