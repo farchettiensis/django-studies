@@ -1,11 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href="../../my_tennis_club/static/myglobal.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
   {% block styles %}{% endblock styles %}
 </head>
 <body>
+
+<div class="topnav">
+  <a href="/">HOME</a> |
+  <a href="/members">MEMBERS</a>
+</div>
 
 {% block content %}
 {% endblock %}
