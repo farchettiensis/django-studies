@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Welcome {# Everyone #}</h1>
+{% comment "random comment" %}
+  <h1>Welcome ladies and gentlemen</h1>
+{% endcomment %}
+<hr>
+<br>
+{% include "mymenu.html" with me="Recruit" sponsor="Chosa Heidan" %}
+<br>
+<hr>
+
+{% for x in firstname %}
+  <h1>{{ x }} is the only name here, really</h1>
+{% endfor %}
+<br>
+<p>What's up with that?</p>
+<hr>
+
+{% for y in members_firstnames %}
+  <h4>Don't forget about {{ y }}, though</h4>
+{% endfor %}
+<hr>
+
+{% with firstname="Linus" %}
+  <h1>Actually, {{ firstname }} appeared twice!</h1>
+{% endwith %}
+<hr>
+
+{% for x in members reversed %}
+  <h1>{{ x.id }}</h1>
+  <p>
+    {{ x.firstname }}
+    {{ x.lastname }}
+  </p>
+{% endfor %} 
+</ul>
+<hr>
+
+<ul>
+  {% for x in emptytestobject %}
+    <li>{{ x.firstname }}</li>
+  {% empty %}
+    <li>No members</li>
+  {% endfor %}
+</ul>
+<hr>
+
+<p>{{ fruits }}</p>
+<ul>
+  {% for x in fruits %}
+    <li
+      {% if forloop.first %}
+        style="background-color:lightblue;"
+      {% endif %}
+    >{{ x }}</li>
+  {% endfor %}
+</ul> 
+<hr>
+</body>
+{% include 'footer.html' %} 
+</html>
